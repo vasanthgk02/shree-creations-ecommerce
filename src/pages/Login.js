@@ -12,6 +12,7 @@ import Grid from '@mui/material/Grid';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import metadata from "../data/metadata.json"
 
 function Copyright(props) {
   return (
@@ -34,7 +35,7 @@ export default function Login({ onLogin }) {
     const data = new FormData(event.currentTarget);
     const email = data.get('email');
     const password = data.get('password')
-    if (email === "kpr@gmail.com" && password === "pass")
+    if (email === metadata["email"] && password === metadata["password"])
       onLogin();
   };
 
